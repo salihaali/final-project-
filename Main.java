@@ -1,27 +1,50 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.*;
-import java.util.Calendar;
 
 public class Main {
 
-    public static void main(String[] args) {
-        //Creating list of events
-        List<calendarEvents> event = new ArrayList<calendarEvents>();
-        //Creating events
-        calendarEvents b1 = new calendarEvents(01, "java lecture", 12, 13, "nothing");
-        calendarEvents b2 = new calendarEvents(02, "Dentist appointment", 14, 15, "yes");
-        calendarEvents b3 = new calendarEvents(03, "school attendance", 17, 18, "no");
-        //Adding Books to list
-        event.add(b1);
-        event.add(b2);
-        event.add(b3);
-        //Traversing list
-        for (calendarEvents c : event) {
-            System.out.println(c.date + " " + c.event + " " + c.time + " " + c.endTime + " " + c.notes);
+    public static ArrayList<String> eventName() {
+        System.out.println("Please enter event name: ");
+        Scanner scanner = new Scanner(System.in);
+        String event = scanner.nextLine();
+        ArrayList<String> events = new ArrayList<>();
+        events.add(event);
+        return events;
+    }
+
+    public static ArrayList<String> eventDate() {
+        System.out.println("Please enter event date: ");
+        Scanner scanner = new Scanner(System.in);
+        String date = scanner.nextLine();
+        ArrayList<String> dates = new ArrayList<>();
+        dates.add(date);
+        return dates;
+    }
+
+    public static void choose(int n) {
+        if (n == 1) {
+            eventName();
+
+            eventDate();
+
+        } else if (n == 2) {
+            System.out.println("Daily schedule");
+
         }
-        Calendar c = Calendar.getInstance();
-        System.out.println(c);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Please enter: " + "\n" + "1 - Create an event; 2 - Daily schedule; 3 - Search  event: ");
+
+        int n = scanner.nextInt();
+        choose(n);
+
+       // System.out.println("Your appointment details : " + events.get(0) + " on " +dates.get(0) );
+
+
     }
 }
