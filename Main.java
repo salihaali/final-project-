@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static ArrayList<String> eventDate() {
-        System.out.println("Please enter event date: ");
+        System.out.println("Please enter event date DD.MM.YYYY: ");
         Scanner scanner = new Scanner(System.in);
         String date = scanner.nextLine();
         ArrayList<String> dates = new ArrayList<>();
@@ -25,7 +25,6 @@ public class Main {
     public static void choose(int n) {
         if (n == 1) {
             eventName();
-
             eventDate();
 
         } else if (n == 2) {
@@ -34,16 +33,31 @@ public class Main {
         }
     }
 
+    public static void dailySchedule() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter date: ");
+        String date = scanner.nextLine();
+
+        for (int i = 0; i < eventDate().size(); i++) {
+            if ()
+
+        }
+
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int n;
 
-        System.out.print("Please enter: " + "\n" + "1 - Create an event; 2 - Daily schedule; 3 - Search  event: ");
+        while (n == 1 || n == 2) {
+            System.out.print("Please enter: " + "\n" + "1 - Create an event; 2 - Daily schedule; 3 - Search  event: ");
 
-        int n = scanner.nextInt();
-        choose(n);
-
-       // System.out.println("Your appointment details : " + events.get(0) + " on " +dates.get(0) );
+            int n = scanner.nextInt();
+            choose(n);
+        }
+        // System.out.println("Your appointment details : " + events.get(0) + " on " +dates.get(0) );
 
 
     }
